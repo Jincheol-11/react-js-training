@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>attribute / property </title>
+  <script type="text/javascript">
+    const init = () => {
+      // console.log('page load!');
+      document.getElementById("btn").num = "9999";
+      document.getElementById("btn").onclick = function() {
+        console.log(this.num);
+        const list = document.getElementById("list");
+        const aTagList = document.getElementsByTagName("a");
+
+        for (let index = 0; index < aTagList.length; index++) {
+          console.log(aTagList[index].getAttribute("num"));
+          
+        }
+
+
+        // const link1 = document.getElementById("link1");
+        // console.log(link1.getAttribute("num"));
+        // const link2 = document.getElementById("link2");
+        // console.log(link2.getAttribute("num"));
+
+        // link.href = "https://www.google.com";
+        // link.innerText = "google";
+        // link.target = "_blank";
+
+        // DOM의 href
+        console.log(link.href);
+      };
+    };
+    window.onload = init;
+
+  </script>
+</head>
+<body>
+  <button id="btn">click</button>
+  <!-- a 태그에 대한 href -->
+  <ul>
+    <!-- num은 돔에 안올라가서 num같은거 쓸때에는 getAttribute 써서 불러온다. -->
+    <li>  <a href="https://www.naver.com/" id="link1" num="1">naver</a></li>
+    <li>  <a href="https://www.google.com/" id="link2" num="2">google</a></li>
+
+  </ul>
+</body>
+</html>
